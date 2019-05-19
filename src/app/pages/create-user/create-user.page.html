@@ -1,0 +1,31 @@
+<ion-content padding color="medium">
+  <ion-card color="light" class=".card">
+    <ion-card-content ion-fixed>
+      <ion-card-header color="dark" class="auto">
+        <ion-card-title text-center>
+          REGISTRATE
+        </ion-card-title>
+      </ion-card-header>
+<form [formGroup]="formGroupUser">
+  <ion-item *ngFor="let c of constantUser | async" color="light">
+
+    <ion-label position="floating">{{ c.title }}</ion-label>
+      <ion-input
+        [type]="c.type"
+        [(ngModel)]="user[c.name]"
+        [name]="c.name"
+        [formControlName]="c.name">
+      </ion-input>
+      <div *ngIf="formGroupUser.get(c.name).dirty || formGroupUser.get(c.name).touched">
+        <span>{{ getErrorUser(c.name)}}</span>
+      </div>
+
+  </ion-item>
+
+</form>
+</ion-card-content>
+</ion-card>
+<ion-button expand="full" (click)="createrUser()" color="secondary">
+  <h1>REGITRAR</h1>
+</ion-button>
+</ion-content>

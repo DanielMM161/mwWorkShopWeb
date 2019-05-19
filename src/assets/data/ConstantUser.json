@@ -1,0 +1,23 @@
+[
+    {
+      "type": "text",
+      "name": "name",
+      "title": "Nombre"
+    },
+    {
+      "type": "text",
+      "name": "email",
+      "title": "Email"
+    },
+    {
+      "type": "text",
+      "name": "pass",
+      "title": "Contraseña"
+
+    },
+    {
+      "type": "text",
+      "name": "workPosition",
+      "title": "Puesto Trabajo"
+    }
+  ]
