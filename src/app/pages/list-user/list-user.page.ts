@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/User';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-list-user',
@@ -12,7 +13,7 @@ export class ListUserPage implements OnInit {
 
   userList = [];
 
-  constructor(private userS: UserService) { }
+  constructor(private userS: UserService, private menuCtrl: MenuController) { }
 
   ngOnInit() {
     this.getAllUsers();
@@ -37,5 +38,9 @@ export class ListUserPage implements OnInit {
 
     this.getAllUsers();
   }
+
+  toggle(){
+    this.menuCtrl.toggle();
+   }
 
 }

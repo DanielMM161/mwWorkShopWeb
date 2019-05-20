@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as core from '@angular/core';
-//import { Details } from 'src/app/models/details';
-//import { Incidence } from '../../models/Incidence';
 import { DataList } from '../../models/dataList';
-//import { Vehicle } from 'src/app/models/vehicle';
 import { ServicesService } from '../../services/services.service';
 import { MenuController } from '@ionic/angular';
 
@@ -116,9 +112,7 @@ export class MenuPage implements OnInit {
 
  }
 
- toggleMenu(){
+ toggle(){
   this.menuCtrl.toggle();
-  this.menuCtrl.enable(true, 'first');
-  this.menuCtrl.open('first');
  }
 }
