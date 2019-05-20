@@ -16,7 +16,7 @@
         </ion-card-title>
         <ion-list>
           <ion-item-sliding *ngFor="let d of dataList">
-            <ion-item>
+            <ion-item (click)="sendBudget(d)">
 
 
               <ion-label>

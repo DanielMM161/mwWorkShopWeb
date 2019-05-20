@@ -14,8 +14,7 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-
-
+import { SendClientBudgetPageModule } from './pages/send-client-budget/send-client-budget.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +27,8 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     AngularFirestoreModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    SendClientBudgetPageModule
   ],
   providers: [
     StatusBar,

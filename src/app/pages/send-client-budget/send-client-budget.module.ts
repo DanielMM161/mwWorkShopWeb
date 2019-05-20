@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+
 import { IonicModule } from '@ionic/angular';
-import { MenuPage } from './menu.page';
 
-
+import { SendClientBudgetPage } from './send-client-budget.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: MenuPage
+    component: SendClientBudgetPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MenuPage]
+  declarations: [SendClientBudgetPage]
 })
-export class MenuPageModule {}
+export class SendClientBudgetPageModule {}

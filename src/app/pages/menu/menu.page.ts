@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataList } from '../../models/dataList';
 import { ServicesService } from '../../services/services.service';
 import { MenuController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-menu',
@@ -21,7 +23,8 @@ export class MenuPage implements OnInit {
   dataList: DataList[] = [];
   vehicles = [];
   customers = [];
- constructor(private services: ServicesService, private menuCtrl: MenuController) { }
+
+ constructor(private services: ServicesService, private menuCtrl: MenuController, private router: Router) { }
 
  ngOnInit() {
    this.getAll();
@@ -78,7 +81,7 @@ export class MenuPage implements OnInit {
          nifCustomer: this.auxData.nifCustomer
        });
      }
-     console.log('data list', this.dataList);
+     //console.log('data list', this.dataList);
    });
  }
 
@@ -114,5 +117,18 @@ export class MenuPage implements OnInit {
 
  toggle(){
   this.menuCtrl.toggle();
+ }
+
+ sendBudget(dataList: DataList){
+   for (let c of this.customers){
+     if (dataList.nifCustomer == c.data.nif) {
+       this.services.customer = c.data;
+       console.log('CUSTOMER SERVICE', this.services.customer);
+       
+     }
+
+   }
+   //this.router.navigate(['/displaceMenu/(displaceMenuContent:sendBudget)']);
+
  }
 }

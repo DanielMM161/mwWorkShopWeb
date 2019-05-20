@@ -6,8 +6,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class ServicesService {
 
+  customer: any;
+
   constructor(private service: AngularFirestore) { }
 
+  /**
+   * collect data from the BD
+   */
   getDetails() {
     return this.service.collection('details').snapshotChanges();
   }

@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', loadChildren: './pages/displace-menu/displace-menu.module#DisplaceMenuPageModule' }
+  { path: '', redirectTo: 'send-client-budget', pathMatch: 'full' },
+  { path: 'displace-menu', loadChildren: './pages/displace-menu/displace-menu.module#DisplaceMenuPageModule' },
+  { path: 'send-client-budget', loadChildren: './pages/send-client-budget/send-client-budget.module#SendClientBudgetPageModule' }
+
   /*{ path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
   { path: 'create-user', loadChildren: './pages/create-user/create-user.module#CreateUserPageModule' },
