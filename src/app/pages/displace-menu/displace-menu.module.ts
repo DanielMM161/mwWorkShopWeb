@@ -25,10 +25,6 @@ const routes: Routes = [
         loadChildren: '../list-user/list-user.module#ListUserPageModule'
       }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/displace-menu/menu'
   }
 ];
 

@@ -14,8 +14,9 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-import { SendClientBudgetPageModule } from './pages/send-client-budget/send-client-budget.module';
+import { SendBudgetPageModule } from './pages/send-budget/send-budget.module';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
     AppRoutingModule,
     HttpClientModule,
     AngularFireAuthModule,
-    SendClientBudgetPageModule
+    SendBudgetPageModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+
   ],
   providers: [
     StatusBar,

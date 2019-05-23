@@ -120,14 +120,15 @@ export class MenuPage implements OnInit {
  }
 
  sendBudget(dataList: DataList){
-   for (let c of this.customers){
+   /*for (let c of this.customers){
      if (dataList.nifCustomer == c.data.nif) {
        this.services.customer = c.data;
        console.log('CUSTOMER SERVICE', this.services.customer);
        
      }
 
-   }
+   }*/
+   this.router.navigate(['/send-budget']);
    //this.router.navigate(['/displaceMenu/(displaceMenuContent:sendBudget)']);
 
  }
