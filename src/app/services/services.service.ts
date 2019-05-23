@@ -7,7 +7,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class ServicesService {
 
   customer: any;
-
+  details: any;
+  vehicle: any;
+  incident: any;
+  
   constructor(private service: AngularFirestore) { }
 
   /**

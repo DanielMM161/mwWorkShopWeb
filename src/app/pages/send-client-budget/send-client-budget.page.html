@@ -1,5 +1,7 @@
-<ion-content id="content">
-  <ion-input [(ngModel)]="a"></ion-input>
+<div id="contenido" #content>
 
-  <ion-button (click)="savePdf()"></ion-button>
-</ion-content>
+  <p>{{customer.data.name}}</p>
+
+</div>
+
+<ion-footer><ion-button (click)="saveSendPdf()" expand="full">CREAR O ENVIAR EMAIL</ion-button></ion-footer>

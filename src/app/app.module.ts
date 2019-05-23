@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { SendClientBudgetPageModule } from './pages/send-client-budget/send-client-budget.module';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +34,7 @@ import { SendClientBudgetPageModule } from './pages/send-client-budget/send-clie
   ],
   providers: [
     StatusBar,
+    EmailComposer,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

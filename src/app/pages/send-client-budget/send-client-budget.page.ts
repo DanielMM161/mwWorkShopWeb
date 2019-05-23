@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ServicesService } from '../../services/services.service';
 import * as jsPDF from 'jspdf';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 @Component({
   selector: 'app-send-client-budget',
@@ -11,22 +12,46 @@ export class SendClientBudgetPage implements OnInit {
 
   @ViewChild('content') content: ElementRef;
   customer: any;
-  a: any;
+  vehicle: any;
+  details: any;
+  incident: any;
+  document: any;
 
-  constructor(private service: ServicesService) { }
+  constructor(private service: ServicesService,private email: EmailComposer) { }
 
   ngOnInit() {
     this.customer = this.service.customer;
-    console.log(this.customer);
+   /* this.vehicle = this.service.vehicle;
+    this.details = this.service.details;
+    this.incident = this.service.incident;*/
   }
 
-  savePdf(){
-    console.log(this.a);
-    let doc = new jsPDF();
-    let content = this.content.nativeElement;
+  saveSendPdf(){
 
-    doc.text(this.a ,15 ,15);
-    const a = doc.save('d.pdf');
+      /*  let email = {
+          to: 'danielmmarquez161@gmail.com ',
+          cc: 'diabeticman666@gmail.com',
+          subject: 'Cordova Icons',
+          body: 'How are you? Nice greetings from Leipzig',
+          isHtml: true
+        }
+        
+        // Send a text message using default options
+        this.email.open(email);*/
+
+   const doc = new jsPDF();
+    let specialEH = {
+      "editor" : function(element, renderer){
+        return true;
+      }
+   };
+   let content = this.content.nativeElement;
+   this.document = doc.fromHTML(content.innerHTML,15, {
+     'width': 190,
+     'elementHandlers': specialEH
+   });
+   doc.save('prueba.pdf');
+   console.log(this.document);
   }
 
 }

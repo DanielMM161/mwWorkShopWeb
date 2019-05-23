@@ -2,17 +2,33 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+
 import { IonicModule } from '@ionic/angular';
+
 import { DisplaceMenuPage } from './displace-menu.page';
-import { MenuPageModule } from '../menu/menu.module';
-import { CreateUserPageModule } from '../create-user/create-user.module';
-import { ListUserPageModule } from '../list-user/list-user.module';
-import { DisplaceMenuRoutingModule } from './displace-menu-routing.module';
 
 const routes: Routes = [
   {
+    path: 'displace-menu',
+    component: DisplaceMenuPage,
+    children: [
+      {
+        path: 'menu',
+        loadChildren: '../menu/menu.module#MenuPageModule'
+      },
+      {
+        path: 'create-user',
+        loadChildren: '../create-user/create-user.module#CreateUserPageModule'
+      },
+      {
+        path: 'list-user',
+        loadChildren: '../list-user/list-user.module#ListUserPageModule'
+      }
+    ]
+  },
+  {
     path: '',
-    component: DisplaceMenuPage
+    redirectTo: '/displace-menu/menu'
   }
 ];
 
@@ -21,10 +37,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    DisplaceMenuRoutingModule,
-    MenuPageModule,
-    CreateUserPageModule,
-    ListUserPageModule
+    RouterModule.forChild(routes)
   ],
   declarations: [DisplaceMenuPage]
 })

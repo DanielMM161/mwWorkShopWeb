@@ -7,24 +7,24 @@ import { Router, RouterEvent } from '@angular/router';
   styleUrls: ['./displace-menu.page.scss'],
 })
 export class DisplaceMenuPage implements OnInit {
-  selectedPath = '';
 
   pages = [
     {
-      title: 'Menu Page',
-      url: '/displaceMenu/(displaceMenuContent:menu)'
+      title: 'Menu',
+      url: '/displace-menu/menu'
     },
     {
-      title: 'List-user Page',
-      url: '/displaceMenu/(displaceMenuContent:listUser)'
+      title: 'List User',
+      url: '/displace-menu/list-user'
     },
     {
-      title: 'Create-user Page',
-      url: '/displaceMenu/(displaceMenuContent:createUser)'
-    }
+      title: 'Create User',
+      url: '/displace-menu/create-user'
+    },
   ];
-  constructor(private routes: Router) {
-    this.routes.events.subscribe((event: RouterEvent) => {
+  selectedPath = '';
+  constructor(private router: Router) {
+    this.router.events.subscribe((event: RouterEvent) => {
       this.selectedPath = event.url;
     });
    }
