@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SendBudgetPage } from './send-budget.page';
+import { SendClientBudgetPage } from './send-client-budget.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: SendBudgetPage
+    component: SendClientBudgetPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SendBudgetPage]
+  declarations: [SendClientBudgetPage]
 })
-export class SendBudgetPageModule {}
+export class SendClientBudgetPageModule {}

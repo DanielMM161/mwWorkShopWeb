@@ -1,7 +1,5 @@
 {
   "name": "mwWorkShopWeb",
-  "integrations": {
-    "cordova": {}
-  },
+  "integrations": {},
   "type": "angular"
 }
