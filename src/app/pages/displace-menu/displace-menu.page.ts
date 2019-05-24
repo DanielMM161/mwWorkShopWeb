@@ -20,7 +20,7 @@ export class DisplaceMenuPage implements OnInit {
     {
       title: 'Create User',
       url: '/displace-menu/create-user'
-    },
+    }
   ];
   selectedPath = '';
   constructor(private router: Router) {
